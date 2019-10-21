@@ -1465,7 +1465,7 @@ void mgt_dispatcher(_adapter *padapter, union recv_frame *precv_frame)
 			ptable->func = &OnAuth;
 		else
 			ptable->func = &OnAuthClient;
-	/* pass through */
+	__attribute__ ((fallthrough));
 	case WIFI_ASSOCREQ:
 	case WIFI_REASSOCREQ:
 		_mgt_dispatcher(padapter, ptable, precv_frame);
@@ -9918,8 +9918,8 @@ static int issue_action_ba(_adapter *padapter, unsigned char *raddr, unsigned ch
 			BA_para_set &= ~IEEE80211_ADDBA_PARAM_TID_MASK;
 			BA_para_set |= (tid << 2) & IEEE80211_ADDBA_PARAM_TID_MASK;
 
-			BA_para_set &= ~RTW_IEEE80211_ADDBA_PARAM_BUF_SIZE_MASK;
-			BA_para_set |= (size << 6) & RTW_IEEE80211_ADDBA_PARAM_BUF_SIZE_MASK;
+			BA_para_set &= ~IEEE80211_ADDBA_PARAM_BUF_SIZE_MASK;
+			BA_para_set |= (size << 6) & IEEE80211_ADDBA_PARAM_BUF_SIZE_MASK;
 
 			if (!padapter->registrypriv.wifi_spec) {
 				if (pregpriv->ampdu_amsdu == 0) /* disabled */
