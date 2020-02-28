@@ -306,7 +306,6 @@ typedef struct lps_poff_info {
 #endif /*CONFIG_LPS_POFF*/
 
 struct pwrctrl_priv {
-	_adapter *adapter;
 	_pwrlock	lock;
 	_pwrlock	check_32k_lock;
 	volatile u8 rpwm; /* requested power state for fw */

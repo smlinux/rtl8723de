@@ -626,13 +626,7 @@ int rtw_android_priv_cmd(struct net_device *net, struct ifreq *ifr, int cmd)
 		goto exit;
 	}
 
-	/* 
-	* access_ok ==> function declared in arch/csky/include/asm/uaccess.h
-	* till 4.20.14 ==> static inline int access_ok(int type, const void *addr, unsigned long size)
-	* post 5.0.0 ==> static inline int access_ok(const void *addr, unsigned long size)
-	* type int was a previously unused variable 
-	*/
-	if (!access_ok(priv_cmd.buf, priv_cmd.total_len)) {
+	if (!access_ok(VERIFY_READ, priv_cmd.buf, priv_cmd.total_len)) {
 		RTW_INFO("%s: failed to access memory\n", __FUNCTION__);
 		ret = -EFAULT;
 		goto exit;

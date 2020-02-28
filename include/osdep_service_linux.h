@@ -280,10 +280,12 @@ __inline static void rtw_list_delete(_list *plist)
 
 #define RTW_TIMER_HDL_ARGS void *FunctionContext
 
-__inline static void _init_timer(_timer *ptimer, _nic_hdl nic_hdl, void *pfunc)
+__inline static void _init_timer(_timer *ptimer, _nic_hdl nic_hdl, void *pfunc, void *cntx)
 {
 	/* setup_timer(ptimer, pfunc,(u32)cntx);	 */
-	timer_setup(ptimer, pfunc, 0);
+	ptimer->function = pfunc;
+	ptimer->data = (unsigned long)cntx;
+	init_timer(ptimer);
 }
 
 __inline static void _set_timer(_timer *ptimer, u32 delay_time)
