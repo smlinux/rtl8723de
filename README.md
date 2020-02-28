@@ -1,3 +1,5 @@
+# This repository branch is deprecated and is no longer being updated.
+
 # rtl8723de
 Realtek RTL8723DE module for Linux kernel version >= 5.0
 
