@@ -1,3 +1,5 @@
+# Test the module on a test PC before using it on a working PC.
+
 # rtl8723de
 Realtek RTL8723DE module for Linux kernel version 5
 
