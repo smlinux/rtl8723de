@@ -4,6 +4,11 @@ To overcome <br><i><b>make[2]: *** [scripts/Makefile.build:268: /var/lib/dkms/rt
 # rtl8723de
 Realtek RTL8723DE module for Linux kernel version 5
 
+Setup:
+
+    sudo rm -r /var/lib/dkms/rtl*
+
+
 Install:
 
     git clone https://github.com/Dhirajraje/rtl8723de.git -b current
