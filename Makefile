@@ -1,4 +1,5 @@
-USER_EXTRA_CFLAGS=-Wno-error=incompatible-pointer-types
+USER_EXTRA_CFLAGS += -Wno-error=incompatible-pointer-types
+USER_EXTRA_CFLAGS += -Wno-error=date-time 
 EXTRA_CFLAGS += $(USER_EXTRA_CFLAGS)
 EXTRA_CFLAGS += -O1
 #EXTRA_CFLAGS += -O3
