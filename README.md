@@ -1,7 +1,7 @@
 # Test the module on a test PC before using it on a working PC.
 
 # rtl8723de
-Realtek RTL8723DE module for Linux kernel version 5
+Realtek RTL8723DE module for Linux kernel version 5 and higher
 
 Install:
 
@@ -18,3 +18,5 @@ Uninstall:
     dkms remove rtl8723de/5.1.1.8_21285.20171026_COEX20170111-1414 --all
     depmod -a
     reboot
+
+#thanks
